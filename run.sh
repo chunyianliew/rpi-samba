@@ -22,6 +22,10 @@ printing = bsd
 printcap name = /dev/null
 disable spoolss = yes
 acl allow execute always = True
+deadtime = 30
+use sendfile = yes
+min receivefile size = 16384
+socket options = IPTOS_LOWDELAY TCP_NODELAY IPTOS_THROUGHPUT SO_RCVBUF=131072 SO_SNDBUF=131072
 EOT
 
   while getopts ":u:s:h" opt; do
